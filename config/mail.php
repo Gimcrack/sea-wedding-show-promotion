@@ -55,6 +55,8 @@ return [
     |
     */
 
+    'to' => env('MAIL_TO'),
+
     'from' => [
         'address' => 'no-reply@notifications.jeremybloomstrom.com',
         'name' => 'Wedding Fair Promotion 2019',

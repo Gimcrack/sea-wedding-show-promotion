@@ -10,7 +10,7 @@ class EmailController extends Controller
 {
     public function store()
     {
-        Mail::to('jeremy@jeremybloomstrom.com')
+        Mail::to(config('mail.to'))
             ->send( new SurveyResponse(request()->all()));
     }
 }
