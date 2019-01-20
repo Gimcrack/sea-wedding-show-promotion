@@ -186,7 +186,7 @@
 
                 this.busy = true;
 
-                window.axios.post('/api/send', this.form)
+                window.axios.post('https://wedding-fair-promotion.specialeventsalaska.com/api/send', this.form)
                     .then( () => {
                         this.busy = false;
                         this.done = true;

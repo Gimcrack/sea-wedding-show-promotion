@@ -1944,7 +1944,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!this.validate()) return false;
       this.busy = true;
-      window.axios.post('/api/send', this.form).then(function () {
+      window.axios.post('https://wedding-fair-promotion.specialeventsalaska.com/api/send', this.form).then(function () {
         _this2.busy = false;
         _this2.done = true;
         _this2.expanded = false;
