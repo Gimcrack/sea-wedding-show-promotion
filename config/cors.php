@@ -16,7 +16,7 @@ return [
     'allowedOrigins' => ['specialeventsalaska.com','wedding-show-promotion.test'],
     'allowedOriginsPatterns' => [],
     'allowedHeaders' => ['*'],
-    'allowedMethods' => ['POST'],
+    'allowedMethods' => ['OPTIONS','POST'],
     'exposedHeaders' => [],
     'maxAge' => 0,
 
