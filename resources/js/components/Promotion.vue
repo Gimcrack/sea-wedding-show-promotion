@@ -1,6 +1,6 @@
 <template>
     <div class="promotion" :class="{expanded, done}">
-        <div class="content">
+        <div class="promotion-content">
             <header>
                 <template v-if="! done">
                     <strong>Today Only &nbsp;</strong>
@@ -19,56 +19,56 @@
 
             <transition name="fade">
                 <div v-show="expanded && ! done" class="form">
-                    <div class="form-group">
+                    <div class="promotion-form-group">
                         <label for="name">Name</label>
-                        <input @input="input" required autofocus id="name" v-model="form.name" type="text" class="form-control">
+                        <input @input="input" required autofocus id="name" v-model="form.name" type="text" class="promotion-form-control">
                         <i class="fa fa-fw fa-user"></i>
                         <span v-if="errors.name" class="helptext input">
               Name is a required field
           </span>
                     </div>
 
-                    <div class="form-group">
+                    <div class="promotion-form-group">
                         <label for="phone">Phone</label>
-                        <input @input="input" required id="phone" v-model="form.phone" type="text" class="form-control">
+                        <input @input="input" required id="phone" v-model="form.phone" type="text" class="promotion-form-control">
                         <i class="fa fa-fw fa-phone"></i>
                         <span v-if="errors.phone" class="helptext input">
               Phone number is a required field
           </span>
                     </div>
 
-                    <div class="form-group">
+                    <div class="promotion-form-group">
                         <label for="email">Email</label>
-                        <input @input="input" required id="email" v-model="form.email" type="text" class="form-control">
+                        <input @input="input" required id="email" v-model="form.email" type="text" class="promotion-form-control">
                         <i class="fa fa-fw fa-envelope"></i>
                         <span v-if="errors.email" class="helptext input">
               Email is a required field
           </span>
                     </div>
 
-                    <div class="form-group">
+                    <div class="promotion-form-group">
                         <label for="wedding_date">Wedding Date</label>
-                        <input id="wedding_date" v-model="form.wedding_date" type="date" class="form-control">
+                        <input id="wedding_date" v-model="form.wedding_date" type="date" class="promotion-form-control">
                         <i class="fa fa-fw fa-calendar"></i>
                     </div>
 
-                    <div class="form-group">
+                    <div class="promotion-form-group">
                         <label for="guest_count">Guest Count</label>
-                        <input id="guest_count" v-model="form.guest_count" type="text" class="form-control">
+                        <input id="guest_count" v-model="form.guest_count" type="text" class="promotion-form-control">
                         <i class="fa fa-fw fa-users"></i>
                     </div>
 
-                    <div class="form-group">
+                    <div class="promotion-form-group">
                         <label for="venue">Venue</label>
-                        <input id="venue" v-model="form.venue" type="text" class="form-control">
+                        <input id="venue" v-model="form.venue" type="text" class="promotion-form-control">
                         <i class="fa fa-fw fa-map-marker"></i>
                     </div>
 
-                    <div class="form-group">
+                    <div class="promotion-form-group">
                         <label for="contact">
                             Opt Out
                         </label>
-                        <div class="checkbox">
+                        <div class="promotion-checkbox">
                             <label for="contact">
                                 <input id="contact" type="checkbox" v-model="form.dont_contact">
                                 Please do not contact me about my event
@@ -76,61 +76,61 @@
                         </div>
                     </div>
 
-                    <form @submit.prevent="submit" class="form-group">
+                    <form @submit.prevent="submit" class="promotion-form-group">
                         <label for="interest">I'm Interested In</label>
-                        <div class="checkbox-group">
+                        <div class="promotion-checkbox-group">
                             <label>
-                                <input id="interest_tents" v-model="form.interest.tents" type="checkbox" class="form-control">
+                                <input id="interest_tents" v-model="form.interest.tents" type="checkbox" class="promotion-form-control">
                                 Tents
                             </label>
                             <label>
-                                <input id="interest_tables" v-model="form.interest.tables" type="checkbox" class="form-control">
+                                <input id="interest_tables" v-model="form.interest.tables" type="checkbox" class="promotion-form-control">
                                 Tables
                             </label>
                             <label>
-                                <input id="interest_chairs" v-model="form.interest.chairs" type="checkbox" class="form-control">
+                                <input id="interest_chairs" v-model="form.interest.chairs" type="checkbox" class="promotion-form-control">
                                 Chairs
                             </label>
                             <label>
-                                <input id="interest_linens" v-model="form.interest.linens" type="checkbox" class="form-control">
+                                <input id="interest_linens" v-model="form.interest.linens" type="checkbox" class="promotion-form-control">
                                 Linens
                             </label>
                             <label>
-                                <input id="interest_glassware" v-model="form.interest.glassware" type="checkbox" class="form-control">
+                                <input id="interest_glassware" v-model="form.interest.glassware" type="checkbox" class="promotion-form-control">
                                 Glassware
                             </label>
                             <label>
-                                <input id="interest_china" v-model="form.interest.china" type="checkbox" class="form-control">
+                                <input id="interest_china" v-model="form.interest.china" type="checkbox" class="promotion-form-control">
                                 China
                             </label>
                             <label>
-                                <input id="interest_flatware" v-model="form.interest.flatware" type="checkbox" class="form-control">
+                                <input id="interest_flatware" v-model="form.interest.flatware" type="checkbox" class="promotion-form-control">
                                 Flatware
                             </label>
                             <label>
-                                <input id="interest_backdrop" v-model="form.interest.backdrop" type="checkbox" class="form-control">
+                                <input id="interest_backdrop" v-model="form.interest.backdrop" type="checkbox" class="promotion-form-control">
                                 Backdrop
                             </label>
                             <label>
-                                <input id="interest_lighting" v-model="form.interest.lighting" type="checkbox" class="form-control">
+                                <input id="interest_lighting" v-model="form.interest.lighting" type="checkbox" class="promotion-form-control">
                                 Lighting
                             </label>
                             <label>
-                                <input id="interest_photo_booth" v-model="form.interest.photo_booth" type="checkbox" class="form-control">
+                                <input id="interest_photo_booth" v-model="form.interest.photo_booth" type="checkbox" class="promotion-form-control">
                                 Photo Booth
                             </label>
                             <label>
-                                <input id="interest_dance_floor" v-model="form.interest.dance_floor" type="checkbox" class="form-control">
+                                <input id="interest_dance_floor" v-model="form.interest.dance_floor" type="checkbox" class="promotion-form-control">
                                 Dance Floor
                             </label>
 
                         </div>
 
                         <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
-                            <button v-if="busy" disabled="disabled" class="btn disabled">
+                            <button v-if="busy" disabled="disabled" class="promotion-btn disabled">
                                 <i class="fa fa-refresh fa-spin"></i>
                             </button>
-                            <button v-else type="submit" class="btn">Go</button>
+                            <button v-else type="submit" class="promotion-btn">Go</button>
                             <span v-if="has_errors" class="helptext">
               Oops. Looks like you left out some required information. Please fill out all required fields and submit again.
             </span>
@@ -141,7 +141,7 @@
                 </div>
             </transition>
 
-            <button v-if="! done" @click="toggleExpanded" class="btn btn-plain">
+            <button v-if="! done" @click="toggleExpanded" class="promotion-btn btn-plain">
                 <i class="fa" :class="[ expanded ? 'fa-chevron-up' : 'fa-chevron-down' ]"></i>
             </button>
         </div>
@@ -186,11 +186,36 @@
 
                 this.busy = true;
 
-                setTimeout( () => {
-                    this.busy = false;
-                    this.done = true;
-                    this.expanded = false;
-                }, 2000 );
+                window.axios.post('/api/send', this.form)
+                    .then( () => {
+                        this.busy = false;
+                        this.done = true;
+                        this.expanded = false;
+                    });
+
+
+            }
+        },
+
+        computed : {
+            emailText() {
+                let text = '';
+
+                for (let prop in this.form)
+                {
+                    if ( prop === 'interest') {
+                        for (let prop_int in this.form.interest)
+                        {
+                            text += `<strong>Interested In ${prop_int}</strong> : ${this.form.interest[prop_int]} <br/>`
+                        }
+                    }
+
+                    else {
+                        text += `<strong>${prop}</strong> : ${this.form[prop]} <br/>`;
+                    }
+                }
+
+                return text;
             }
         },
 
@@ -245,12 +270,19 @@
     /*}*/
 
     .promotion {
+
+        .promotion-btn {
+            min-width: unset;
+            height: unset;
+            line-height: unset;
+        }
+
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
 
-        .content {
+        .promotion-content {
             max-width: 500px;
             width: 100%;
             display: flex;
@@ -260,13 +292,15 @@
         }
 
         header {
-            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        background: rgba(#51A3A3,0.6);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image:linear-gradient(to top, rgba(#51A3A3,0.6), rgba(#51A3A3,0.6)), url('https://images.unsplash.com/photo-1503314885798-a70f8f9028d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
         height: 100px;
 
         font-family: "Poppins", sans-serif;
@@ -281,12 +315,12 @@
                 padding: 1rem 0 !important;
             }
 
-            .content {
+            .promotion-content {
                 max-width: 90vw;
             }
 
-            .form-control[type=text],
-            .form-control[type=date] {
+            .promotion-form-control[type=text],
+            .promotion-form-control[type=date] {
                 width: 85vw !important;
             }
 
@@ -295,8 +329,8 @@
                 right: 0 !important;
             }
 
-            .checkbox-group label,
-            .checkbox label {
+            .promotion-checkbox-group label,
+            .promotion-checkbox label {
                 font-size: 14px !important;
             }
         }
@@ -310,11 +344,11 @@
                 padding: 0 !important;
             }
 
-            .content {
+            .promotion-content {
                 max-width: 90vw;
             }
-            .form-control[type=text],
-            .form-control[type=date] {
+            .promotion-form-control[type=text],
+            .promotion-form-control[type=date] {
                 width: 85vw !important;
             }
         }
@@ -346,7 +380,7 @@
             }
         }
 
-        .btn {
+        .promotion-btn {
             &.btn-plain {
                 background: none;
                 border: none;
@@ -374,18 +408,18 @@
         .form {
             width: 100%;
 
-            .form-group {
+            .promotion-form-group {
                 position: relative;
                 display:flex;
                 flex-direction: column;
 
-                .checkbox {
+                .promotion-checkbox {
                     label {
                         font-size: 18px;
                     }
                 }
 
-                .checkbox-group {
+                .promotion-checkbox-group {
                     //display:flex;
                     //flex-direction: column;
                     column-count: 2;
@@ -415,8 +449,8 @@
 
             }
 
-            .form-control[type=text],
-            .form-control[type=date]{
+            .promotion-form-control[type=text],
+            .promotion-form-control[type=date]{
                 width: 100%;
                 border: 1px solid darken(#51A3A3, 20%);
                 background: lighten(#51A3A3, 20);
